@@ -7,6 +7,9 @@ public class CamSwitch : MonoBehaviour
     public GameObject cam1;
     public GameObject cam2;
     public GameObject playerBody;
+    public GameObject crosshair;
+
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,16 +25,20 @@ public class CamSwitch : MonoBehaviour
             {
                 playerBody.transform.parent = null;
                 cam1.SetActive(false);
-                cam2.SetActive(true);
+                //cam2.SetActive(true);
+
+                crosshair.SetActive(false);
+                anim.SetBool("cam2Move", true);
             }
             else if (cam2.activeSelf)
             {
                 playerBody.transform.parent = cam1.transform;
-                cam2.SetActive(false);
+                //cam2.SetActive(false);
                 cam1.SetActive(true);
+
+                crosshair.SetActive(true);
+                anim.SetBool("cam2Move", false);
             }
         }
     }
-
-
 }
