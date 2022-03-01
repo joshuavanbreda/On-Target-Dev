@@ -9,6 +9,8 @@ public class ConfettiTrigger : MonoBehaviour
     public GameObject confetti3;
     public GameObject confetti4;
     public GameObject confetti5;
+
+    public GameObject angryParicle;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,10 @@ public class ConfettiTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            angryParicle.SetActive(true);
+        }
     }
 
     public void OnTriggerEnter(Collider other)
