@@ -29,7 +29,7 @@ public class Crossbow : MonoBehaviour
             ArrowLaunch.LookAt(middleofScreen);                                                       //makes the launchtransform look at it
 
             GameObject arrow = Instantiate(ArrowPrefab, ArrowLaunch.position, ArrowLaunch.rotation); //Instantiate the arrow
-            arrow.GetComponent<Rigidbody>().velocity = arrow.transform.forward * ArrowSpeed;        //Set the velocity of the arrow
+            arrow.GetComponent<Rigidbody>().velocity = (arrow.transform.forward * ArrowSpeed);        //Set the velocity of the arrow
             firetimer = FireRate;                                                                  // Makes the firetimer go back to the default firerate;
 
             anim.Play("Shoot");                                                                      //Play Shoot Animation

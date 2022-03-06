@@ -27,6 +27,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_CameraTargetRot = camera.localRotation;
         }
 
+        public void SensitivityIncrease()
+        {
+            if (Time.timeScale == 0.05f)
+            {
+                smoothTime = 100f;
+            }
+            else
+            {
+                smoothTime = 18f;
+            }
+        }
+
 
         public void LookRotation(Transform character, Transform camera)
         {

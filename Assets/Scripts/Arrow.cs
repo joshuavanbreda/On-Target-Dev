@@ -15,7 +15,7 @@ public class Arrow : MonoBehaviour
     private void Update()
     {
         if(rb.velocity.magnitude >= 0.2f)
-        transform.rotation = Quaternion.LookRotation(rb.velocity); //Make arrow rotation follow velocity(so it looks more like an arrow and curves upwards/downwards)
+        transform.rotation = Quaternion.LookRotation(-rb.velocity); //Make arrow rotation follow velocity(so it looks more like an arrow and curves upwards/downwards)
     }
     private void OnCollisionEnter(Collision col)
     {
