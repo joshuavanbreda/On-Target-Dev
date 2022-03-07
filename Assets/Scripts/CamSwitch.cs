@@ -21,24 +21,20 @@ public class CamSwitch : MonoBehaviour
     {
         if (Input.GetKeyDown("c"))
         {
-            if (cam1.activeSelf)
-            {
-                playerBody.transform.parent = null;
-                cam1.SetActive(false);
-                //cam2.SetActive(true);
+            playerBody.transform.parent = null;
+            cam1.SetActive(false);
+            cam2.SetActive(true);
 
-                crosshair.SetActive(false);
-                anim.SetBool("cam2Move", true);
-            }
-            else if (cam2.activeSelf)
-            {
-                playerBody.transform.parent = cam1.transform;
-                //cam2.SetActive(false);
-                cam1.SetActive(true);
+            crosshair.SetActive(false);
+            anim.SetBool("cam2Move", true);
 
-                crosshair.SetActive(true);
-                anim.SetBool("cam2Move", false);
-            }
         }
+
+
+    }
+
+    public void ToggleCam()
+    {
+
     }
 }
