@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CamSwitch : MonoBehaviour
 {
+    public EnemyGunMan enemyGunMan;
     public GameObject cam1;
     public GameObject cam2;
     public GameObject playerBody;
@@ -29,12 +30,12 @@ public class CamSwitch : MonoBehaviour
             anim.SetBool("cam2Move", true);
 
         }
-
-
     }
 
-    public void ToggleCam()
-    {
+    
 
-    }
+    //public void ToggleCam()
+    //{
+
+    //}
 }

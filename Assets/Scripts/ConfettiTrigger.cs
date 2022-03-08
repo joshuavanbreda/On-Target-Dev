@@ -26,6 +26,7 @@ public class ConfettiTrigger : MonoBehaviour
         }
     }
 
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.name == "confTrig")

@@ -16,8 +16,13 @@ public class Crossbow : MonoBehaviour
     public GameObject mainCam;
     public GameObject cam2;
     public GameObject playerObj;
+    public GameObject endTargetFail;
 
     public GameObject permArrow;
+
+    public GameObject crosshair;
+
+    public GameObject playerController;
 
 
     private Camera cam;
@@ -30,6 +35,22 @@ public class Crossbow : MonoBehaviour
 
     void Update()
     {
+        bool pressedK = false;
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            pressedK = !pressedK;
+        }
+
+        if (pressedK == true)
+        {
+            cameraFollowTarget.target = endTargetFail.transform; //playerObj (before endTargetFail)
+            cameraFollowTarget.transform.rotation = Quaternion.identity;
+
+            playerObj.transform.parent = playerController.transform;
+        }
+
+
         firetimer -= Time.deltaTime;                                                                 //minus 1 per second
 
         if(Input.GetButtonDown("Fire1") && firetimer <=0f)                                            //if left click and fire timer less than zero
@@ -41,10 +62,12 @@ public class Crossbow : MonoBehaviour
             arrow.GetComponent<Rigidbody>().velocity = (arrow.transform.forward * ArrowSpeed);        //Set the velocity of the arrow
             firetimer = FireRate;                                                                  // Makes the firetimer go back to the default firerate;
 
+
             cameraFollowTarget.target = arrow.transform;
 
             if (arrowCamCheck == true)
             {
+                crosshair.SetActive(false);
                 arrowCamera.SetActive(true);
                 mainCam.SetActive(false);
                 cam2.SetActive(false);

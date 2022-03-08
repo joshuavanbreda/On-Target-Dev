@@ -28,6 +28,16 @@ public class SlowMoManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
+            //Time.timeScale = 0.05f;
+            //Time.fixedDeltaTime = 0.5f;
+
+            Time.timeScale = 0.2f;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
+            mouseLook.SensitivityIncrease();
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
             //Time.timeScale = 1f;
             //Time.fixedDeltaTime = 1f;
 

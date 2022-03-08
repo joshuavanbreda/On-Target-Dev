@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Fire
   - TimeManager
+  - boom
+  - PlayerTransform
+  - PlayerTarget
+  - PlayerHead
   layers:
   - Default
   - TransparentFX
